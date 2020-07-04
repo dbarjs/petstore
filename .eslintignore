@@ -1,0 +1,8 @@
+# Third party
+**/node_modules
+
+# js files
+**/*.js
+
+# Build
+**/dist
