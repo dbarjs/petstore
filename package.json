@@ -1,0 +1,21 @@
+{
+  "name": "petstore",
+  "version": "1.0.0",
+  "repository": "https://github.com/dbarjs/pet-store.git",
+  "author": "Eduardo Barros <joseeduardobarros@gmail.com>",
+  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "client": "yarn workspace @petstore/client start",
+    "server": "yarn workspace @petstore/server start",
+    "dev:server": "yarn workspace @petstore/server dev",
+    "start": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+  },
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^5.2.0"
+  }
+}
