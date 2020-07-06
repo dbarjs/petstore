@@ -1,9 +1,12 @@
-function getNextPage(
+// return zero if doesn't have any more pages
+export default function getNextPage(
   total: number,
-  currentPage: number,
-  itemsByPage = 10,
+  take: number,
+  skip: number,
 ): number {
-  return (currentPage + 1) * itemsByPage > total ? 1 : 0;
-}
+  const hasMorePages = total > skip + take;
+  const currentPage = skip / take;
+  const nextPage = currentPage + 1;
 
-export default getNextPage;
+  return hasMorePages ? nextPage : 0;
+}
