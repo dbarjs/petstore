@@ -6,6 +6,7 @@ import CreateProductService from '../services/CreateProductService';
 import Product from '../models/Product';
 import DeleteProductService from '../services/DeleteProductService';
 import UpdateProductService from '../services/UpdateProductService';
+import getNextPage from '../utils/getNextPage';
 
 const productsRouter = Router();
 
@@ -26,31 +27,18 @@ productsRouter.get('/', async (request, response) => {
 
   const productsRepository = getRepository(Product);
 
+  let whereCondition = '';
+
   if (query) {
-    const [products, total_count] = await productsRepository.findAndCount({
-      where: `"name" ILIKE '%${query}%' OR "description" ILIKE '%${query}%' OR "category" ILIKE '%${query}%'`,
-      take,
-      skip,
-    });
-    return response.json({
-      products,
-      total_count,
-    });
+    whereCondition = `"name" ILIKE '%${query}%' OR "description" ILIKE '%${query}%' OR "category" ILIKE '%${query}%'`;
   }
 
   if (name || description || category) {
-    const [products, total_count] = await productsRepository.findAndCount({
-      where: `"name" ILIKE '%${name}%' OR "description" ILIKE '%${description}%' OR "category" ILIKE '%${query}%'`,
-      take,
-      skip,
-    });
-    return response.json({
-      products,
-      total_count,
-    });
+    whereCondition = `"name" ILIKE '%${name}%' OR "description" ILIKE '%${description}%' OR "category" ILIKE '%${query}%'`;
   }
 
   const [products, total_count] = await productsRepository.findAndCount({
+    where: whereCondition,
     take,
     skip,
   });
@@ -58,6 +46,7 @@ productsRouter.get('/', async (request, response) => {
   return response.json({
     products,
     total_count,
+    next: getNextPage(total_count, take, skip),
   });
 });
 
