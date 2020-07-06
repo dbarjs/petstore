@@ -11,6 +11,7 @@ export default async (name = 'default'): Promise<Connection> => {
     username: 'postgres',
     password: 'docker',
     entities: [User, Product],
+    migrations: ['./src/database/migrations/*.ts'],
     database: process.env.NODE_ENV === 'test' ? 'petstore_tests' : 'petstore',
   });
 };
