@@ -13,13 +13,16 @@ import createConnection from './database';
 import routes from './routes';
 import AppError from './errors/AppErrors';
 
+// get custom morgan tokens
+import './utils/getCustomTokens';
+
 createConnection();
 
 const app = express();
 
 // create a write stream (in append mode)
 const accessLogStream = fs.createWriteStream(
-  path.join(__dirname, 'access.log'),
+  path.resolve(__dirname, '..', 'tmp', 'request.log'),
   {
     flags: 'a',
   },
@@ -27,7 +30,14 @@ const accessLogStream = fs.createWriteStream(
 
 app.use(express.json());
 app.use(cors());
-app.use(morgan('combined', { stream: accessLogStream }));
+app.use(
+  morgan(
+    ':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent" ":user-id"',
+    {
+      stream: accessLogStream,
+    },
+  ),
+);
 app.use(routes);
 
 app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
