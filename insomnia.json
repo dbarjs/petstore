@@ -1,0 +1,370 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2020-07-07T23:42:40.541Z",
+  "__export_source": "insomnia.desktop.app:v2020.2.2",
+  "resources": [
+    {
+      "_id": "req_20472326d5f6498693d9430e77588f36",
+      "authentication": {
+        "prefix": "",
+        "token": "{{ token  }}",
+        "type": "bearer"
+      },
+      "body": {},
+      "created": 1593915982629,
+      "description": "",
+      "headers": [],
+      "isPrivate": false,
+      "metaSortKey": -1593915982629,
+      "method": "DELETE",
+      "modified": 1593916343577,
+      "name": "Delete",
+      "parameters": [],
+      "parentId": "fld_ad199bc5bdc14d83a8be32267dadf2aa",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url  }}/products/7cc09a0f-b428-4050-aab8-c8dcb3cba133",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_ad199bc5bdc14d83a8be32267dadf2aa",
+      "created": 1593857928067,
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1592859774833,
+      "modified": 1593861246105,
+      "name": "Products",
+      "parentId": "wrk_07805fb69dc44be0869660f0675d7b50",
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_07805fb69dc44be0869660f0675d7b50",
+      "created": 1593857928039,
+      "description": "",
+      "modified": 1593857928039,
+      "name": "PetStore",
+      "parentId": null,
+      "scope": null,
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_7963747ffaf14f7dbc0947ed66a67aa5",
+      "authentication": { "token": "{{ token  }}", "type": "bearer" },
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"CPU AMD\",\n\t\"description\": \"Another part of a computer\",\n\t\"category\": \"Hardware\"\n}"
+      },
+      "created": 1593857928070,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_84365de3247f4eac8b1aaf2ab22ab6a4",
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1592859796142,
+      "method": "POST",
+      "modified": 1593910472589,
+      "name": "Create",
+      "parameters": [],
+      "parentId": "fld_ad199bc5bdc14d83a8be32267dadf2aa",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url  }}/products",
+      "_type": "request"
+    },
+    {
+      "_id": "req_40045772610c4854aeb00b96a5ac4463",
+      "authentication": { "token": "{{ token  }}", "type": "bearer" },
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"Motherboard ASUS\",\n\t\"description\": \"A Super Component for PC\",\n\t\"category\": \"Hardware\",\n\t\"price\": 3.5,\n\t\"quantity\": 90\n}"
+      },
+      "created": 1593916670982,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_84365de3247f4eac8b1aaf2ab22ab6a4",
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1592728489544.5,
+      "method": "PUT",
+      "modified": 1593921457055,
+      "name": "Update",
+      "parameters": [],
+      "parentId": "fld_ad199bc5bdc14d83a8be32267dadf2aa",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url  }}/products/b4bfdfa4-2c15-439c-a7db-6c7c8039401e",
+      "_type": "request"
+    },
+    {
+      "_id": "req_70569225a7f8439cae66f90df2fa5357",
+      "authentication": {
+        "disabled": false,
+        "token": "{{ token  }}",
+        "type": "bearer"
+      },
+      "body": {},
+      "created": 1593857928073,
+      "description": "",
+      "headers": [],
+      "isPrivate": false,
+      "metaSortKey": -1592597182947,
+      "method": "GET",
+      "modified": 1594156685708,
+      "name": "List",
+      "parameters": [
+        {
+          "description": "",
+          "disabled": true,
+          "id": "pair_f101169236dd47f8aa8cb2fb6074988e",
+          "name": "q",
+          "value": "cpu"
+        },
+        {
+          "description": "",
+          "id": "pair_31f8450905804f3c8a1da11cc70fff82",
+          "name": "name",
+          "value": ""
+        },
+        {
+          "description": "",
+          "id": "pair_0c4f4f420816421191e9fe782ad89682",
+          "name": "",
+          "value": ""
+        },
+        {
+          "description": "",
+          "id": "pair_bd22cab797e64ca2b64fd75fb2f5950f",
+          "name": "category",
+          "value": ""
+        },
+        {
+          "description": "",
+          "id": "pair_3f50a3249b304d749a74eb860983c5bc",
+          "name": "page",
+          "value": "1"
+        },
+        {
+          "description": "",
+          "id": "pair_4f3ccda034ab4386b732c94dcf63dfef",
+          "name": "per_page",
+          "value": "20"
+        }
+      ],
+      "parentId": "fld_ad199bc5bdc14d83a8be32267dadf2aa",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "https://684e3e5a235f.ngrok.io/products",
+      "_type": "request"
+    },
+    {
+      "_id": "req_4ea93d0cc497409b984d70dd369c5359",
+      "authentication": { "token": "{{ token  }}", "type": "bearer" },
+      "body": {
+        "mimeType": "multipart/form-data",
+        "params": [
+          {
+            "description": "",
+            "disabled": false,
+            "fileName": "/home/dbarjs/Dropbox/photo_2020-05-28_04-10-37.jpg",
+            "id": "pair_d2f17af225034028ba2fa64e82725bfd",
+            "name": "avatar",
+            "type": "file",
+            "value": ""
+          }
+        ]
+      },
+      "created": 1593857928083,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_dffb87c1f18a4b9c91bd9fc3f2b71217",
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        },
+        {
+          "description": "",
+          "id": "pair_752b8041b74943a591e1ecbfe0ac9ef8",
+          "name": "",
+          "value": ""
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1593024636303,
+      "method": "PATCH",
+      "modified": 1593857928083,
+      "name": "UpdateAvatar",
+      "parameters": [],
+      "parentId": "fld_83b7c749da424dbabee258d57cc0a496",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url  }}/users/avatar",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_83b7c749da424dbabee258d57cc0a496",
+      "created": 1593857928075,
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1592728404403.5,
+      "modified": 1593857928075,
+      "name": "Users",
+      "parentId": "wrk_07805fb69dc44be0869660f0675d7b50",
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_ee44cf1d4a27418891e3e780d206120c",
+      "authentication": {},
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"Test User\",\n\t\"email\": \"test@gmail.com\",\n\t\"password\": \"123456\"\n}"
+      },
+      "created": 1593857928077,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_84365de3247f4eac8b1aaf2ab22ab6a4",
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1592859796142,
+      "method": "POST",
+      "modified": 1594136889202,
+      "name": "Create",
+      "parameters": [],
+      "parentId": "fld_83b7c749da424dbabee258d57cc0a496",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url  }}/users",
+      "_type": "request"
+    },
+    {
+      "_id": "req_ffef0b19239d46fbb3b8532e0d06e227",
+      "authentication": {},
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"email\": \"test@gmail.com\",\n\t\"password\": \"123456\"\n}"
+      },
+      "created": 1593857928086,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_84365de3247f4eac8b1aaf2ab22ab6a4",
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1592859796142,
+      "method": "POST",
+      "modified": 1593991820532,
+      "name": "Create",
+      "parameters": [],
+      "parentId": "fld_bf4488f08de64a79b1dc05aa37a4c11d",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url  }}/sessions",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_bf4488f08de64a79b1dc05aa37a4c11d",
+      "created": 1593857928085,
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1592662719188.75,
+      "modified": 1593857928085,
+      "name": "Sessions",
+      "parentId": "wrk_07805fb69dc44be0869660f0675d7b50",
+      "_type": "request_group"
+    },
+    {
+      "_id": "env_cdaf4462853345b0913e375b5339a808",
+      "color": null,
+      "created": 1593857928048,
+      "data": {},
+      "dataPropertyOrder": null,
+      "isPrivate": false,
+      "metaSortKey": 1592859763198,
+      "modified": 1593857928048,
+      "name": "Base Environment",
+      "parentId": "wrk_07805fb69dc44be0869660f0675d7b50",
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_07edadcec6514e63afcfbbfe9b0878b9",
+      "cookies": [],
+      "created": 1593857928056,
+      "modified": 1593857928056,
+      "name": "Default Jar",
+      "parentId": "wrk_07805fb69dc44be0869660f0675d7b50",
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_af3ceefa16374aa0954fb68333fcc986",
+      "contentType": "yaml",
+      "contents": "",
+      "created": 1593857928061,
+      "fileName": "GoBarber Bootcamp",
+      "modified": 1593857928061,
+      "parentId": "wrk_07805fb69dc44be0869660f0675d7b50",
+      "_type": "api_spec"
+    },
+    {
+      "_id": "env_3fb6d3a488d044d8bc139d2818491fe7",
+      "color": null,
+      "created": 1593857928050,
+      "data": {
+        "base_url": "http://localhost:3333",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1OTQxMjY0NDksImV4cCI6MTU5NDIxMjg0OSwic3ViIjoiNjM4MzhhZDktYjZjZi00NjY4LTgzNTctYzBlMjM3MWE1MTBkIn0.F7eQp3bzk5Gviaoqg6MkOXiUcTUTsZJdnuaRk-q_VXI"
+      },
+      "dataPropertyOrder": { "&": ["base_url", "token"] },
+      "isPrivate": false,
+      "metaSortKey": 1592859811689,
+      "modified": 1594126464793,
+      "name": "dev",
+      "parentId": "env_cdaf4462853345b0913e375b5339a808",
+      "_type": "environment"
+    }
+  ]
+}
