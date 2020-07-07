@@ -5,9 +5,15 @@
   "author": "Eduardo Barros <joseeduardobarros@gmail.com>",
   "main": "index.js",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/typeorm/**",
+      "**/typeorm"
+    ]
+  },
   "scripts": {
     "web": "yarn workspace @petstore/web start",
     "server": "yarn workspace @petstore/server start",
