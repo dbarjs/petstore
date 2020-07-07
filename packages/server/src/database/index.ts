@@ -1,17 +1,15 @@
-import { Connection, createConnection } from 'typeorm';
-import User from '../models/User';
-import Product from '../models/Product';
+import { createConnection, getConnectionOptions, Connection } from 'typeorm';
 
 export default async (name = 'default'): Promise<Connection> => {
-  return createConnection({
-    name,
-    type: 'postgres',
-    host: 'localhost',
-    port: 5432,
-    username: 'postgres',
-    password: 'docker',
-    entities: [User, Product],
-    migrations: ['./src/database/migrations/*.ts'],
-    database: process.env.NODE_ENV === 'test' ? 'petstore_tests' : 'petstore',
-  });
+  const defaultOptions = await getConnectionOptions();
+
+  return createConnection(
+    Object.assign(defaultOptions, {
+      name,
+      database:
+        process.env.NODE_ENV === 'test'
+          ? 'gostack_desafio06_tests'
+          : defaultOptions.database,
+    }),
+  );
 };
