@@ -208,6 +208,7 @@ const ProductTable: React.FC = () => {
       editable: true,
     },
     {
+      className: 'table-column-description',
       title: 'Description',
       dataIndex: 'description',
       editable: true,
@@ -225,6 +226,7 @@ const ProductTable: React.FC = () => {
       dataType: 'number',
     },
     {
+      className: 'table-column-action',
       title: 'Action',
       dataIndex: 'action',
       render: actionColumn,
