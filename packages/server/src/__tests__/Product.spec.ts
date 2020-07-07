@@ -1,9 +1,7 @@
 import request from 'supertest';
 import { Connection, getRepository, getConnection } from 'typeorm';
-import { verify } from 'jsonwebtoken';
 
 import createConnection from '../database';
-import authConfig from '../config/auth';
 
 import Product from '../models/Product';
 
