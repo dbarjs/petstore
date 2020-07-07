@@ -18,7 +18,8 @@
     "web": "yarn workspace @petstore/web start",
     "server": "yarn workspace @petstore/server start",
     "dev:server": "yarn workspace @petstore/server dev",
-    "start": "concurrently --kill-others-on-fail \"yarn server\" \"yarn web\""
+    "start": "concurrently --kill-others-on-fail \"yarn server\" \"yarn web\"",
+    "typeorm": "yarn workspace @petstore/server typeorm"
   },
   "license": "MIT",
   "dependencies": {
