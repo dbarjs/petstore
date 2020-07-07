@@ -1,11 +1,15 @@
+require('dotenv').config();
+
+const host = process.env.DB_HOST || 'localhost';
+
 module.exports = [
   {
     type: 'postgres',
-    host: 'localhost',
-    port: 5432,
-    username: 'postgres',
-    password: 'docker',
-    database: 'petstore',
+    host,
+    port: process.env.DB_PORT,
+    username: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_NAME,
     entities: ['./src/models/*.ts'],
     migrations: ['./src/database/migrations/*.ts'],
     cli: {
@@ -15,11 +19,11 @@ module.exports = [
   {
     name: 'seed',
     type: 'postgres',
-    host: 'localhost',
-    port: 5432,
-    username: 'postgres',
-    password: 'docker',
-    database: 'petstore',
+    host,
+    port: process.env.DB_PORT,
+    username: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_NAME,
     entities: ['./src/models/*.ts'],
     migrations: ['./src/database/seeds/*.ts'],
     cli: {
