@@ -9,10 +9,10 @@
     "packages/*"
   ],
   "scripts": {
-    "client": "yarn workspace @petstore/client start",
+    "web": "yarn workspace @petstore/web start",
     "server": "yarn workspace @petstore/server start",
     "dev:server": "yarn workspace @petstore/server dev",
-    "start": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+    "start": "concurrently --kill-others-on-fail \"yarn server\" \"yarn web\""
   },
   "license": "MIT",
   "dependencies": {
