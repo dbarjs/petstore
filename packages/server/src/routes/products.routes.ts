@@ -23,7 +23,7 @@ productsRouter.get('/', async (request, response) => {
   } = request.query;
 
   const take = Number(per_page) > 0 ? Number(per_page) : 10;
-  const skip = Number(page) > 0 ? Number(page) * take : 0;
+  const skip = Number(page) > 1 ? Number(page) * take : 0;
 
   const productsRepository = getRepository(Product);
 
