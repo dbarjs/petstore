@@ -1,7 +1,7 @@
 {
   "name": "petstore",
   "version": "1.0.0",
-  "repository": "https://github.com/dbarjs/pet-store.git",
+  "repository": "https://github.com/dbarjs/petstore.git",
   "author": "Eduardo Barros <joseeduardobarros@gmail.com>",
   "main": "index.js",
   "private": true,
