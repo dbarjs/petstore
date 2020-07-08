@@ -153,8 +153,6 @@ describe('Product', () => {
       .get('/products?per_page=1&page=1')
       .set(header);
 
-    console.log(body);
-
     expect(true);
   });
 
